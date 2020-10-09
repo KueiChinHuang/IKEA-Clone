@@ -31,19 +31,19 @@ function Header() {
                 <div className="header__icons">
                     <ul>
                         <li>
-                            <a href="#"><LocationOnOutlinedIcon className="header__locationIcon" /></a>
+                            <a href="#"><LocationOnOutlinedIcon className="header__icon-btn" /></a>
                         </li>
                         <li>
-                            <a href="#"><AssignmentTurnedInOutlinedIcon className="header__locationIcon" /></a>
+                            <a href="#"><AssignmentTurnedInOutlinedIcon className="header__icon-btn" /></a>
                         </li>
                         <li>
-                            <a href="#"><PersonOutlineOutlinedIcon className="header__locationIcon" /></a>
+                            <a href="#"><PersonOutlineOutlinedIcon className="header__icon-btn" /></a>
                         </li>
                         <li>
-                            <a href="#"><FavoriteBorderIcon className="header__locationIcon" /></a>
+                            <a href="#"><FavoriteBorderIcon className="header__icon-btn" /></a>
                         </li>
                         <li>
-                            <a href="#"><ShoppingBasketOutlinedIcon className="header__locationIcon" /></a>
+                            <a href="#"><ShoppingBasketOutlinedIcon className="header__icon-btn" /></a>
                         </li>
                     </ul>
                 </div>
