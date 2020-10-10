@@ -1,28 +1,22 @@
 header {
   height: 100px;
+  position: sticky;
+  top: 0;
 }
 
 .header-container {
   height: 100%;
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  flex-wrap: wrap;
   align-items: center;
-  width: 100%;
+  flex-wrap: wrap;
 }
 
 .header__logo img {
   width: 90px;
 }
 
-.nav {
-  display: flex;
-}
-
 .header__nav__main {
   display: flex;
-  flex-direction: row;
 }
 
 .header__nav__main li {
@@ -42,6 +36,12 @@ header {
   color: #111;
 }
 
+@media (max-width: 1250px) {
+  .header__nav {
+    display: none;
+  }
+}
+
 .header__search {
   display: flex;
   align-items: center;
@@ -59,12 +59,10 @@ header {
 
 .search-field__input {
   width: 100%;
-  padding: 0 0.5rem;
   background-color: inherit;
   border: none;
   line-height: 2;
   font-size: 16px;
-  appearance: none;
   outline: 0;
   box-shadow: none;
 }

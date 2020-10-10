@@ -1,5 +1,7 @@
 import React from 'react'
 import './Header.css'
+
+// Import icons from Material-UI
 import SearchIcon from '@material-ui/icons/Search';
 import AssignmentTurnedInOutlinedIcon from '@material-ui/icons/AssignmentTurnedInOutlined';
 import LocationOnOutlinedIcon from '@material-ui/icons/LocationOnOutlined';
