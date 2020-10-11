@@ -1,0 +1,19 @@
+.app {
+  height: 100%;
+  width: 100%;
+}
+
+.app-container {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 10% minmax(600px, 1fr) 10%;
+  grid-template-rows: 100px 1fr;
+}
+
+.app-header {
+  grid-area: 1 / 2;
+}
+
+.app-page {
+  grid-area: 2 / 2;
+}
