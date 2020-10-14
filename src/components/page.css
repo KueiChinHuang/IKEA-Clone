@@ -1,3 +1,18 @@
 .page-container {
   height: 95%;
+  display: flex;
+  flex-direction: column;
+}
+
+.page-title {
+  padding: 0.5em 0;
+  letter-spacing: 0.05em;
+  font-weight: bold;
+}
+
+.page-description {
+  padding: 0.5em 0;
+  color: #484848;
+  line-height: 1.71429;
+  font-size: 0.875rem;
 }
