@@ -7,7 +7,7 @@
   height: 100%;
   display: grid;
   grid-template-columns: 10% minmax(600px, 1fr) 10%;
-  grid-template-rows: 100px 1fr;
+  grid-template-rows: 100px 1fr 100px;
 }
 
 .app-header {
@@ -16,4 +16,8 @@
 
 .app-page {
   grid-area: 2 / 2;
+}
+
+.app-footer {
+  grid-area: 3 / 2;
 }

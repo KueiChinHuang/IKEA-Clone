@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import Bedroom from './components/Bedroom';
+import Footer from './components/Footer';
 import Header from './components/Header';
 
 function App() {
@@ -12,6 +13,9 @@ function App() {
         </div>
         <div className="app-page">
           <Bedroom />
+        </div>
+        <div className="app-footer">
+          <Footer />
         </div>
       </div>
     </div>
