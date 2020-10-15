@@ -2,26 +2,15 @@ import React from 'react'
 import './Bedroom.css'
 import Inspiration from './Inspiration'
 import './page.css'
+import inspirationData from '../inspirationData'
 
 function Bedroom() {
-    const items = [
-        {
-            pid: 1,
-            title: "REGOLIT",
-            description: "Pendant lamp shade, white17 ¾ (45 cm)",
-            price: "4.99",
-            position_top: "21%",
-            position_left: "60.5%"
-        },
-        {
-            pid: 2,
-            title: "SKURUP",
-            description: "Wall lamp, black",
-            price: "14.99",
-            position_top: "29.6%",
-            position_left: "25.5%"
-        }
-    ]
+
+    let inspirationHTML = [];
+
+    for (let inspiration_data of inspirationData) {
+        inspirationHTML.push(<Inspiration inspiration={inspiration_data} />)
+    }
 
     return (
         <div className="bedroom">
@@ -33,11 +22,7 @@ function Bedroom() {
                     <p>Not sure which bed or bedroom furniture is right for you? You can browse this gallery of fully-furnished bedrooms to find the looks that suit your style.</p>
                 </div>
                 <div className="bedroom-container">
-                    <Inspiration items={items}/>
-                    <Inspiration items={items}/>
-                    <Inspiration items={items}/>
-                    <Inspiration items={items}/>
-                    <Inspiration items={items}/>
+                    {inspirationHTML}
                 </div>
             </div>
         </div>

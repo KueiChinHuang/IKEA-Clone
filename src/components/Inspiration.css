@@ -14,7 +14,7 @@
 }
 
 .inspiration-image__dot {
-  transition: border-color 250ms ease-in-out;
+  transition: 250ms ease-in-out;
   width: 2rem;
   height: 2rem;
   border: 2px solid transparent;
@@ -33,7 +33,7 @@
 
 .inspiration-image__dot::after {
   content: "";
-  transition: transform 250ms ease-in-out;
+  transition: 250ms ease-in-out;
   position: relative;
   background: #fff;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.55);
@@ -55,7 +55,6 @@ a,
   width: 130px;
   height: 60px;
   padding: 12px 12px !important;
-  transition: 250ms ease-in-out !important;
   background: #fff !important;
   color: #000 !important;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25) !important;
