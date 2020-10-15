@@ -20,12 +20,12 @@ https://css-tricks.com/aspect-ratios-grid-items/
   content: "";
   height: 0;
   display: inline-block;
-  padding-top: 100%;
+  padding-top: 98.345%;
   width: 5px;
   position: relative;
 }
 
-.shoppable-image {
+.inspiration-container {
   position: absolute;
   top: 0;
   left: 0;
