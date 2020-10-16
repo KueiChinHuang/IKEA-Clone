@@ -3,39 +3,43 @@ import "./Inspiration.css";
 import ReactTooltip from "react-tooltip";
 import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
 import { Link } from "react-router-dom";
+import productData from "../productData";
 
 function Inspiration({ inspiration_data }) {
   let itemsHTML = [];
 
   if (inspiration_data.items) {
     for (let item of inspiration_data.items) {
+      const product = productData.find((p) => p.pid == item.pid);
+
       itemsHTML.push(
         <Link
           to={`/product/${item.pid}`}
           className="inspiration-image__area"
           style={{ top: item.position_top, left: item.position_left }}
+          key={item.pid}
         >
           <ReactTooltip
-            id={item.title}
+            id={product.title}
             className="tooltip"
             place="right"
             effect="solid"
             arrowColor="transparent"
-            clickable="true"
+            clickable={true}
           >
             <div className="tooltip-container">
-              <h4 className="tooltip-title">{item.title}</h4>
-              <span className="tooltip-description">{item.description}</span>
+              <h4 className="tooltip-title">{product.title}</h4>
+              <span className="tooltip-description">{product.description}</span>
               <div className="tooltip-arrow">
                 <ArrowForwardIosIcon fontSize="small" />
               </div>
-              <span className="tooltip-price">{item.price}</span>
+              <span className="tooltip-price">{product.price}</span>
             </div>
           </ReactTooltip>
           <div
             className="inspiration-image__dot"
             data-tip
-            data-for={item.title}
+            data-for={product.title}
           ></div>
         </Link>
       );

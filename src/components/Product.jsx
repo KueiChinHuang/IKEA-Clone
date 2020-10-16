@@ -1,10 +1,15 @@
 import React from "react";
 import "./Product.css";
+import productData from "../productData";
 import StarIcon from "@material-ui/icons/Star";
 import StarHalfIcon from "@material-ui/icons/StarHalf";
 
 function Product({ match }) {
-  console.log(match.params.id);
+  const pid = match.params.id;
+  console.log(pid);
+  console.log(productData);
+
+  const getProduct = (pid) => {};
 
   return (
     <div className="page">

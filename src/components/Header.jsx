@@ -1,5 +1,6 @@
 import React from "react";
 import "./Header.css";
+import { Link } from "react-router-dom";
 
 // Import icons from Material-UI
 import SearchIcon from "@material-ui/icons/Search";
@@ -8,14 +9,13 @@ import LocationOnOutlinedIcon from "@material-ui/icons/LocationOnOutlined";
 import PersonOutlineOutlinedIcon from "@material-ui/icons/PersonOutlineOutlined";
 import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
 import ShoppingBasketOutlinedIcon from "@material-ui/icons/ShoppingBasketOutlined";
-import { Link } from "react-router-dom";
 
 function Header() {
   return (
     <header className="header">
       <div className="header-container">
         <div className="header__logo">
-          <img src="./IKEA-Logo.png" />
+          <img src="/IKEA-Logo.png" />
         </div>
 
         <div className="header__nav">
