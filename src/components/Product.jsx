@@ -1,4 +1,7 @@
 import React from 'react'
+import './Product.css'
+import StarIcon from '@material-ui/icons/Star';
+import StarHalfIcon from '@material-ui/icons/StarHalf';
 
 function Product() {
     return (
@@ -8,11 +11,11 @@ function Product() {
                     <image>image.jpg</image>
                 </div>
                 <div className="product-details">
-                    <div className="product-title">Title</div>
+                    <h3 className="product-title">Title</h3>
+                    <span className="product-price">$4.99</span>
                     <div className="product-description">Description</div>
-                    <div className="product-rating">rating</div>
-                    <div className="product-price">price</div>
-                    <button>Add to cart</button>
+                    <div className="product-rating"><StarIcon className="rating-star" fontSize="small"/></div>
+                    <button className="btn-add-to-cart">Add to cart</button>
 
                 </div>
             </div>
