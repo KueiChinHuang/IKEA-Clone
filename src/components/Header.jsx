@@ -14,9 +14,13 @@ function Header() {
   return (
     <header className="header">
       <div className="header-container">
-        <div className="header__logo">
-          <img src="/IKEA-Logo.png" alt="IKEA-Logo.png" />
-        </div>
+        <Link to="/">
+          <img
+            className="header__logo"
+            src="/IKEA-Logo.png"
+            alt="IKEA-Logo.png"
+          />
+        </Link>
 
         <div className="header__nav">
           <ul className="header__nav__main">
@@ -64,7 +68,7 @@ function Header() {
               </Link>
             </li>
             <li>
-              <Link to="#">
+              <Link to="/cart">
                 <ShoppingBasketOutlinedIcon className="header__icon-btn" />
               </Link>
             </li>

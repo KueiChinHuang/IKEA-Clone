@@ -23,20 +23,14 @@ function Product({ match }) {
   }
 
   return (
-    <div className="page">
-      <div className="product-container">
-        <img
-          className="product-image"
-          src={product.image}
-          alt={product.image}
-        />
-        <div className="product-details">
-          <h3 className="product-title">{product.title}</h3>
-          <span className="product-price">${product.price}</span>
-          <div className="product-description">{product.description}</div>
-          <div className="product-rating">{ratingHTML}</div>
-          <button className="btn-add-to-cart">Add to cart</button>
-        </div>
+    <div className="product-container">
+      <img className="product-image" src={product.image} alt={product.image} />
+      <div className="product-details">
+        <h3 className="product-title">{product.title}</h3>
+        <span className="product-price">${product.price}</span>
+        <div className="product-description">{product.description}</div>
+        <div className="product-rating">{ratingHTML}</div>
+        <button className="btn-add-to-cart">Add to cart</button>
       </div>
     </div>
   );

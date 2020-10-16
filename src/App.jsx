@@ -3,10 +3,10 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import "./App.css";
 import Bedroom from "./components/Bedroom";
+import Cart from "./components/Cart";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Product from "./components/Product";
-
 
 function App() {
   return (
@@ -15,16 +15,22 @@ function App() {
         <div className="app-container">
           <Header />
 
-          <Switch>
-            <Route
-              path="/product/:id"
-              render={(props) => <Product {...props} />}
-            />
+          <div className="main">
+            <Switch>
+              <Route
+                path="/product/:id"
+                render={(props) => <Product {...props} />}
+              />
 
-            <Route path="/">
-              <Bedroom />
-            </Route>
-          </Switch>
+              <Route path="/cart">
+                <Cart />
+              </Route>
+
+              <Route path="/">
+                <Bedroom />
+              </Route>
+            </Switch>
+          </div>
 
           <Footer />
         </div>
