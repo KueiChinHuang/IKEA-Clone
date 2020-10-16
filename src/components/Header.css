@@ -2,6 +2,8 @@ header {
   height: 100px;
   position: sticky;
   top: 0;
+  background: white;
+  z-index: 100;
 }
 
 .header-container {

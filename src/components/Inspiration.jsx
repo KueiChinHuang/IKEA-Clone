@@ -10,7 +10,7 @@ function Inspiration({ inspiration_data }) {
 
   if (inspiration_data.items) {
     for (let item of inspiration_data.items) {
-      const product = productData.find((p) => p.pid == item.pid);
+      const product = productData.find((p) => p.pid === item.pid);
 
       itemsHTML.push(
         <Link

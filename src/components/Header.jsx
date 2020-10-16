@@ -15,7 +15,7 @@ function Header() {
     <header className="header">
       <div className="header-container">
         <div className="header__logo">
-          <img src="/IKEA-Logo.png" />
+          <img src="/IKEA-Logo.png" alt="IKEA-Logo.png" />
         </div>
 
         <div className="header__nav">
@@ -24,7 +24,7 @@ function Header() {
               <Link to="#">Products</Link>
             </li>
             <li>
-              <Link to="#">Rooms</Link>
+              <Link to="/">Rooms</Link>
             </li>
             <li>
               <Link to="#">SALE</Link>

@@ -32,7 +32,7 @@
   padding: 0.5em 0;
   letter-spacing: 0.05em;
   font-weight: bold;
-  z-index: 100;
+  z-index: 90;
 }
 
 .page-description {
@@ -40,5 +40,5 @@
   color: #484848;
   line-height: 1.71429;
   font-size: 0.875rem;
-  z-index: 100;
+  z-index: 90;
 }
