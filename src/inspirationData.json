@@ -1,142 +1,142 @@
 [
-    {
-        "inspirationId": 1,
-        "image": "/inspiration-image/i-img-1.webp",
-        "items": [
-            {
-                "pid": 1,
-                "title": "REGOLIT",
-                "description": "Pendant lamp shade, white17 ¾ \" (45 cm)",
-                "price": "4.99",
-                "position_top": "21%",
-                "position_left": "60.5%",
-                "image": "/product-image/regolit-1",
-                "rating": 4.5
-            },
-            {
-                "pid": 2,
-                "title": "SKURUP",
-                "description": "Wall lamp, black",
-                "price": "14.99",
-                "position_top": "27%",
-                "position_left": "22%",
-                "image": "/product-image/skurup-1",
-                "rating": 4.5
-            },
-            {
-                "pid": 3,
-                "title": "VÅRELD",
-                "description": "Bedspread, dark gray91x98\" (230x250 cm)",
-                "price": "49.99",
-                "position_top": "60.6%",
-                "position_left": "25.5%",
-                "image": "/product-image/vareld-1",
-                "rating": 4.5
-            }
-        ]
-    },
-    {
-        "inspirationId": 2,
-        "image": "/inspiration-image/i-img-2.webp",
-        "items": [
-            {
-                "pid": 4,
-                "title": "ÄNGSLILJA",
-                "description": "Duvet cover and pillowcase(s), light brown-redKing",
-                "price": "49.99",
-                "position_top": "27%",
-                "position_left": "10%",
-                "image": "/product-image/aengslilja-1",
-                "rating": 4
-            },
-            {
-                "pid": 5,
-                "title": "SKUBB",
-                "description": "Box, set of 6, white",
-                "price": "9.99",
-                "position_top": "42%",
-                "position_left": "62.2%",
-                "image": "/product-image/skubb-1",
-                "rating": 4.5
-            }
-        ]
-    },
-    {
-        "inspirationId": 3,
-        "image": "/inspiration-image/i-img-3.webp",
-        "items": [
-            {
-                "pid": 6,
-                "title": "SANELA",
-                "description": "Cushion cover, dark gray26x26 \" (65x65 cm)",
-                "price": "12.99",
-                "position_top": "58.2%",
-                "position_left": "22.1%",
-                "image": "/product-image/sanela-1.webp",
-                "rating": 4
-            },
-            {
-                "pid": 7,
-                "title": "NATTJASMIN",
-                "description": "Duvet cover and pillowcase(s), white, King",
-                "price": "59.99",
-                "position_top": "84.3%",
-                "position_left": "76.9%",
-                "image": "/product-image/nattjasmin-1.webp",
-                "rating": 4.5
-            }
-        ]
-    },
-    {
-        "inspirationId": 4,
-        "image": "/inspiration-image/i-img-3.webp",
-        "items": [
-            {
-                "pid": 8,
-                "title": "BUMERANG",
-                "description": "Hanger, natural",
-                "price": "6.99",
-                "position_top": "39.2%",
-                "position_left": "38.9%",
-                "image": "/product-image/bumerang-1.webp",
-                "rating": 5
-            },
-            {
-                "pid": 9,
-                "title": "KOMPLEMENT",
-                "description": "Multi-use hanger, white",
-                "price": "6.99",
-                "position_top": "40.7%",
-                "position_left": "69.3%",
-                "image": "/product-image/komplement-1.webp",
-                "rating": 5
-            }
-        ]
-    },
-    {
-        "inspirationId": 5,
-        "image": "/inspiration-image/i-img-5.webp",
-        "items": [
-            {
-                "pid": 8,
-                "title": "HAUGA",
-                "description": "High cabinet with 2 doors, white27 1/2x78 3/8 \" (70x199 cm)",
-                "price": "199.00",
-                "position_top": "18.4%",
-                "position_left": "43.9%",
-                "image": "/product-image/hauga-1.webp",
-                "rating": 5
-            },
-            {
-                "pid": 9,
-                "title": "STRANDMON",
-                "description": "Footstool, Djuparp dark green",
-                "price": "119.00",
-                "position_top": "82.5%",
-                "position_left": "73.9%",
-                "image": "/product-image/strandmon-1.webp",
-                "rating": 4.5
-            }
-        ]
-    }
+  {
+    "inspirationId": 1,
+    "image": "/inspiration-image/i-img-1.webp",
+    "items": [
+      {
+        "pid": 1,
+        "title": "REGOLIT",
+        "description": "Pendant lamp shade, white17 ¾ \" (45 cm)",
+        "price": "4.99",
+        "position_top": "21%",
+        "position_left": "60.5%",
+        "image": "/product-image/regolit-1",
+        "rating": 4.5
+      },
+      {
+        "pid": 2,
+        "title": "SKURUP",
+        "description": "Wall lamp, black",
+        "price": "14.99",
+        "position_top": "27%",
+        "position_left": "22%",
+        "image": "/product-image/skurup-1",
+        "rating": 4.5
+      },
+      {
+        "pid": 3,
+        "title": "VÅRELD",
+        "description": "Bedspread, dark gray91x98\" (230x250 cm)",
+        "price": "49.99",
+        "position_top": "60.6%",
+        "position_left": "25.5%",
+        "image": "/product-image/vareld-1",
+        "rating": 4.5
+      }
+    ]
+  },
+  {
+    "inspirationId": 2,
+    "image": "/inspiration-image/i-img-2.webp",
+    "items": [
+      {
+        "pid": 4,
+        "title": "ÄNGSLILJA",
+        "description": "Duvet cover and pillowcase(s), light brown-redKing",
+        "price": "49.99",
+        "position_top": "27%",
+        "position_left": "10%",
+        "image": "/product-image/aengslilja-1",
+        "rating": 4
+      },
+      {
+        "pid": 5,
+        "title": "SKUBB",
+        "description": "Box, set of 6, white",
+        "price": "9.99",
+        "position_top": "42%",
+        "position_left": "62.2%",
+        "image": "/product-image/skubb-1",
+        "rating": 4.5
+      }
+    ]
+  },
+  {
+    "inspirationId": 3,
+    "image": "/inspiration-image/i-img-3.webp",
+    "items": [
+      {
+        "pid": 6,
+        "title": "SANELA",
+        "description": "Cushion cover, dark gray26x26 \" (65x65 cm)",
+        "price": "12.99",
+        "position_top": "58.2%",
+        "position_left": "22.1%",
+        "image": "/product-image/sanela-1.webp",
+        "rating": 4
+      },
+      {
+        "pid": 7,
+        "title": "NATTJASMIN",
+        "description": "Duvet cover and pillowcase(s), white, King",
+        "price": "59.99",
+        "position_top": "84.3%",
+        "position_left": "76.9%",
+        "image": "/product-image/nattjasmin-1.webp",
+        "rating": 4.5
+      }
+    ]
+  },
+  {
+    "inspirationId": 4,
+    "image": "/inspiration-image/i-img-3.webp",
+    "items": [
+      {
+        "pid": 8,
+        "title": "BUMERANG",
+        "description": "Hanger, natural",
+        "price": "6.99",
+        "position_top": "39.2%",
+        "position_left": "38.9%",
+        "image": "/product-image/bumerang-1.webp",
+        "rating": 5
+      },
+      {
+        "pid": 9,
+        "title": "KOMPLEMENT",
+        "description": "Multi-use hanger, white",
+        "price": "6.99",
+        "position_top": "40.7%",
+        "position_left": "69.3%",
+        "image": "/product-image/komplement-1.webp",
+        "rating": 5
+      }
+    ]
+  },
+  {
+    "inspirationId": 5,
+    "image": "/inspiration-image/i-img-5.webp",
+    "items": [
+      {
+        "pid": 10,
+        "title": "HAUGA",
+        "description": "High cabinet with 2 doors, white27 1/2x78 3/8 \" (70x199 cm)",
+        "price": "199.00",
+        "position_top": "18.4%",
+        "position_left": "43.9%",
+        "image": "/product-image/hauga-1.webp",
+        "rating": 5
+      },
+      {
+        "pid": 11,
+        "title": "STRANDMON",
+        "description": "Footstool, Djuparp dark green",
+        "price": "119.00",
+        "position_top": "82.5%",
+        "position_left": "73.9%",
+        "image": "/product-image/strandmon-1.webp",
+        "rating": 4.5
+      }
+    ]
+  }
 ]
