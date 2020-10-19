@@ -103,3 +103,7 @@ header {
 .header__icons a {
   color: black;
 }
+
+.header-basket-icon {
+  /* green dot when there is things in the basket */
+}

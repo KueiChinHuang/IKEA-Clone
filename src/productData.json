@@ -3,7 +3,7 @@
     "pid": 1,
     "title": "REGOLIT",
     "description": "Pendant lamp shade, white17 ¾ \" (45 cm)",
-    "price": "4.99",
+    "price": 4.99,
     "image": "/product-image/regolit-1.webp",
     "rating": 4.5
   },
@@ -11,7 +11,7 @@
     "pid": 2,
     "title": "SKURUP",
     "description": "Wall lamp, black",
-    "price": "14.99",
+    "price": 14.99,
     "image": "/product-image/skurup-1.webp",
     "rating": 4.5
   },
@@ -19,7 +19,7 @@
     "pid": 3,
     "title": "VÅRELD",
     "description": "Bedspread, dark gray91x98\" (230x250 cm)",
-    "price": "49.99",
+    "price": 49.99,
     "image": "/product-image/vareld-1.webp",
     "rating": 4.5
   },
@@ -27,7 +27,7 @@
     "pid": 4,
     "title": "ÄNGSLILJA",
     "description": "Duvet cover and pillowcase(s), light brown-redKing",
-    "price": "49.99",
+    "price": 49.99,
     "image": "/product-image/aengslilja-1.jpg",
     "rating": 4
   },
@@ -35,7 +35,7 @@
     "pid": 5,
     "title": "SKUBB",
     "description": "Box, set of 6, white",
-    "price": "9.99",
+    "price": 9.99,
     "image": "/product-image/skubb-1.webp",
     "rating": 4.5
   },
@@ -43,7 +43,7 @@
     "pid": 6,
     "title": "SANELA",
     "description": "Cushion cover, dark gray26x26 \" (65x65 cm)",
-    "price": "12.99",
+    "price": 12.99,
     "image": "/product-image/sanela-1.webp",
     "rating": 4
   },
@@ -51,7 +51,7 @@
     "pid": 7,
     "title": "NATTJASMIN",
     "description": "Duvet cover and pillowcase(s), white, King",
-    "price": "59.99",
+    "price": 59.99,
     "image": "/product-image/nattjasmin-1.webp",
     "rating": 4.5
   },
@@ -59,7 +59,7 @@
     "pid": 8,
     "title": "BUMERANG",
     "description": "Hanger, natural",
-    "price": "6.99",
+    "price": 6.99,
     "image": "/product-image/bumerang-1.webp",
     "rating": 5
   },
@@ -67,7 +67,7 @@
     "pid": 9,
     "title": "KOMPLEMENT",
     "description": "Multi-use hanger, white",
-    "price": "6.99",
+    "price": 6.99,
     "image": "/product-image/komplement-1.webp",
     "rating": 5
   },
@@ -75,7 +75,7 @@
     "pid": 10,
     "title": "HAUGA",
     "description": "High cabinet with 2 doors, white27 1/2x78 3/8 \" (70x199 cm)",
-    "price": "199.00",
+    "price": 199.0,
     "image": "/product-image/hauga-1.webp",
     "rating": 5
   },
@@ -83,7 +83,7 @@
     "pid": 11,
     "title": "STRANDMON",
     "description": "Footstool, Djuparp dark green",
-    "price": "119.00",
+    "price": 119.0,
     "image": "/product-image/strandmon-1.webp",
     "rating": 4.5
   }

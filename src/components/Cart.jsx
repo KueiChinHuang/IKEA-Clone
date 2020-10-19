@@ -1,7 +1,11 @@
 import React from "react";
+import { useStateValue } from "../StateProvider";
 import "./Cart.css";
+import Subtotal from "./Subtotal";
 
 function Cart() {
+  const [{ cart }, dispatch] = useStateValue();
+
   return (
     <div className="cart">
       <div className="cart-container">
@@ -21,7 +25,11 @@ function Cart() {
           </div>
         </div>
 
-        <div className="cart-summary">Order summary</div>
+        <div className="cart-summary">
+          <h4>Order summary</h4>
+          <span>Subtotal ({cart.length} items):</span>
+          <Subtotal />
+        </div>
         <button className="btn-checkout">Continue to checkout</button>
 
         <div className="cart-footer">
