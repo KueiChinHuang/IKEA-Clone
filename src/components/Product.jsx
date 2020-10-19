@@ -3,12 +3,13 @@ import "./Product.css";
 import productData from "../productData";
 import StarIcon from "@material-ui/icons/Star";
 import StarHalfIcon from "@material-ui/icons/StarHalf";
+import { useStateValue } from "../StateProvider";
 
 function Product({ match }) {
   const pid = match.params.id;
   const product = productData.find((p) => p.pid == pid);
-  console.log(product);
 
+  // handle rating HTML (star icons)
   let ratingHTML = [];
   let r = product.rating;
   while (r > 0) {
@@ -22,6 +23,25 @@ function Product({ match }) {
     r--;
   }
 
+  // shoot data to data layer
+  const [{ cart }, dispatch] = useStateValue();
+  console.log("this is the cart >>>", cart);
+  
+  const addToCart = () => {
+    // dispatch the item into the data layer
+    dispatch({
+      type: "ADD_TO_CART",
+      item: {
+        pid: product.pid,
+        title: product.title,
+        description: product.description,
+        price: product.price,
+        image: product.image,
+        rating: product.rating,
+      },
+    });
+  };
+
   return (
     <div className="product-container">
       <img className="product-image" src={product.image} alt={product.image} />
@@ -30,7 +50,9 @@ function Product({ match }) {
         <span className="product-price">${product.price}</span>
         <div className="product-description">{product.description}</div>
         <div className="product-rating">{ratingHTML}</div>
-        <button className="btn-add-to-cart">Add to cart</button>
+        <button className="btn-add-to-cart" onClick={addToCart}>
+          Add to cart
+        </button>
       </div>
     </div>
   );
