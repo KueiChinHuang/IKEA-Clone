@@ -1,6 +1,7 @@
 import React from "react";
 import { useStateValue } from "../StateProvider";
 import "./Cart.css";
+import CartProduct from "./CartProduct";
 import Subtotal from "./Subtotal";
 
 function Cart() {
@@ -13,16 +14,7 @@ function Cart() {
         <button className="btn-checkout">Continue to checkout</button>
 
         <div className="cart-product-list">
-          <div className="cart-product-container">
-            <img src="#" alt="img" className="cart-product-image" />
-            <h4 className="cart-product-title">Title</h4>
-            <span className="cart-prodcut-price">Price</span>
-            <span className="cart-product-description">Description</span>
-            <div className="cart-product-action">
-              <span className="cart-product-action-quantity">quantity</span>
-              <span className="cart-product-action-remove">remove</span>
-            </div>
-          </div>
+          <CartProduct />
         </div>
 
         <div className="cart-summary">

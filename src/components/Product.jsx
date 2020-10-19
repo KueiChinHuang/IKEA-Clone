@@ -4,29 +4,16 @@ import productData from "../productData";
 import StarIcon from "@material-ui/icons/Star";
 import StarHalfIcon from "@material-ui/icons/StarHalf";
 import { useStateValue } from "../StateProvider";
+import StarRatings from "react-star-ratings";
 
 function Product({ match }) {
   const pid = match.params.id;
   const product = productData.find((p) => p.pid == pid);
 
-  // handle rating HTML (star icons)
-  let ratingHTML = [];
-  let r = product.rating;
-  while (r > 0) {
-    ratingHTML.push(
-      r >= 1 ? (
-        <StarIcon className="rating-star" fontSize="small" key={r} />
-      ) : (
-        <StarHalfIcon className="rating-star" fontSize="small" key={0} />
-      )
-    );
-    r--;
-  }
-
   // shoot data to data layer
   const [{ cart }, dispatch] = useStateValue();
   console.log("this is the cart >>>", cart);
-  
+
   const addToCart = () => {
     // dispatch the item into the data layer
     dispatch({
@@ -49,7 +36,14 @@ function Product({ match }) {
         <h3 className="product-title">{product.title}</h3>
         <span className="product-price">${product.price}</span>
         <div className="product-description">{product.description}</div>
-        <div className="product-rating">{ratingHTML}</div>
+        <div className="product-rating">
+          <StarRatings
+            rating={product.rating}
+            starRatedColor="orange"
+            starDimension="20px"
+            starSpacing="0"
+          />
+        </div>
         <button className="btn-add-to-cart" onClick={addToCart}>
           Add to cart
         </button>
