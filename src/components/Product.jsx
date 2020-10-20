@@ -12,7 +12,7 @@ function Product({ match }) {
 
   // shoot data to data layer
   const [{ cart }, dispatch] = useStateValue();
-  console.log("this is the cart >>>", cart);
+  // console.log("this is the cart >>>", cart);
 
   const addToCart = () => {
     // dispatch the item into the data layer

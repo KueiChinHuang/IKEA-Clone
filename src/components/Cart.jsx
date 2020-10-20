@@ -14,7 +14,17 @@ function Cart() {
         <button className="btn-checkout">Continue to checkout</button>
 
         <div className="cart-product-list">
-          <CartProduct />
+          {cart.map((item) => (
+            <CartProduct
+              pid={item.pid}
+              title={item.title}
+              description={item.description}
+              image={item.image}
+              price={item.price}
+              rating={item.rating}
+              key={item.pid}
+            />
+          ))}
         </div>
 
         <div className="cart-summary">
