@@ -37,9 +37,7 @@ const reducer = (state, action) => {
             }
 
         case "ADD_QTY":
-
-            const pIndex2 = state.cart.findIndex((p => p.pid === action.pid));
- 
+            const pIndex2 = state.cart.findIndex((p => p.pid === action.pid)); 
             if (pIndex2 >= 0) {
                 console.log("Add qty")
                  return {
@@ -52,10 +50,8 @@ const reducer = (state, action) => {
                }}
 
         case "MINUS_QTY":
-
-            const pIndex3 = state.cart.findIndex((p => p.pid === action.pid));
- 
-            if (pIndex3 >= 0) {
+            const pIndex3 = state.cart.findIndex((p => p.pid === action.pid)); 
+            if (pIndex3 >= 0 && state.cart[pIndex3].qty > 0) {
                 console.log("Minud qty")
                  return {
                      ...state,
@@ -64,7 +60,7 @@ const reducer = (state, action) => {
                         ? { ...item, qty: item.qty - 1 }  
                         : item 
                  )
-               }}
+               }} 
 
 
         default:
