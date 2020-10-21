@@ -43,7 +43,7 @@ const reducer = (state, action) => {
 
         case "QTY_MINUS":
             const pIndex3 = state.cart.findIndex((p => p.pid === action.pid)); 
-            if (pIndex3 >= 0 && state.cart[pIndex3].qty > 0) {
+            if (pIndex3 >= 0 && state.cart[pIndex3].qty > 1) {
                 return {
                     ...state,
                     cart: state.cart.map((item, i) => 
@@ -73,7 +73,7 @@ const reducer = (state, action) => {
     
         case "QTY_UPDATE":
             const pIndex4 = state.cart.findIndex((p => p.pid === action.pid));         
-            if (pIndex4 >= 0 && !isNaN(action.qty)) {
+            if (pIndex4 >= 0 && !isNaN(action.qty) && action.qty > 1) {
                 return {
                     ...state,
                     cart: state.cart.map((item, i) => 
@@ -87,7 +87,7 @@ const reducer = (state, action) => {
                     ...state,
                     cart: state.cart.map((item, i) => 
                         pIndex4 === i 
-                        ? { ...item, qty: 0 }  
+                        ? { ...item, qty: 1 }  
                         : item 
                     )
                 }

@@ -15,7 +15,7 @@ function Cart() {
       <div className="cart-container">
         {console.log(cart.length)}
         {!cart.length > 0 ? (
-          <h1 className="cart-title-empty">Your bag is empty</h1>
+          <h1 className="cart-title">Your bag is empty</h1>
         ) : (
           <>
             <h1 className="cart-title">Shopping cart</h1>

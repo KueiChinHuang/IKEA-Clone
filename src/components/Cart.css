@@ -13,9 +13,14 @@
   align-items: center;
 }
 
+.cart-title {
+  width: 100%;
+  margin-top: 50px;
+}
+
 .btn-checkout {
   width: 100%;
-  height: 3.5rem;
+  height: 3rem;
   margin-top: 4em;
   font-weight: bolder;
   background: #0058a3;
@@ -30,7 +35,7 @@
 }
 
 .cart-product-list {
-  width: 90%;
+  /* width: 90%; */
 }
 
 .cart-summary {
@@ -78,9 +83,4 @@
 
 .cart-footer span {
   margin-left: 10px;
-}
-
-.cart-title-empty {
-  width: 100%;
-  margin-top: 50px;
 }

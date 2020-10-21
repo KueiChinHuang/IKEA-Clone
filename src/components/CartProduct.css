@@ -2,7 +2,7 @@
   width: 100%;
   margin: 2.5rem 0;
   display: grid;
-  grid-template-columns: 4fr 8fr 1fr;
+  grid-template-columns: 4fr 7fr 2fr;
   grid-template-rows: 1fr 3fr 3fr;
   border-bottom: 1px solid #dfdfdf;
 }
@@ -23,6 +23,7 @@
 .cart-prodcut-price {
   grid-column: 3/3;
   grid-row: 1/2;
+  justify-self: end;
 }
 
 .cart-product-description {
@@ -51,7 +52,7 @@
 .cart-product-action-qty-input {
   border: hidden;
   background: transparent;
-  width: 30px;
+  width: 40px;
   text-align: center;
 }
 
