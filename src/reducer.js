@@ -4,7 +4,12 @@ export const initialState = {
 
 // Selector
 export const getCartTotal = (cart) =>
-    cart?.reduce((total, item) => total + item.price, 0);
+    cart?.reduce((total, item) => total + (item.price * item.qty), 0);
+
+export const getProductTotal = (cart, pid) => {
+    const pIndex = cart.findIndex((p => p.pid == pid));
+    return (cart[pIndex].qty * cart[pIndex].price);
+}
 
 export const getQty = (cart, pid) => {
     const pIndex = cart.findIndex((p => p.pid == pid));
@@ -16,11 +21,6 @@ const reducer = (state, action) => {
     console.log(state, action)
 
     switch(action.type) {
-        // case "ADD_TO_CART":
-        //     return {
-        //         ...state,
-        //         cart: [...state.cart, action.item],
-        //     }
         case "ADD_TO_CART":            
             const pIndex = state.cart.findIndex((p => p.pid === action.item.pid)); 
             if (pIndex === -1) {
@@ -28,6 +28,8 @@ const reducer = (state, action) => {
                     ...state,
                     cart: [...state.cart, {...action.item, qty: 1}],
                 }
+            } else {
+                return state;
             }
         
         case "REMOVE_FROM_CART":
@@ -36,31 +38,57 @@ const reducer = (state, action) => {
                 cart: state.cart.filter(item => item.pid !== action.pid)
             }
 
-        case "ADD_QTY":
-            const pIndex2 = state.cart.findIndex((p => p.pid === action.pid)); 
-            if (pIndex2 >= 0) {
-                console.log("Add qty")
-                 return {
-                     ...state,
-                     cart: state.cart.map((item, i) => 
-                        pIndex2 === i 
-                        ? { ...item, qty: item.qty + 1 }  
-                        : item 
-                 )
-               }}
-
-        case "MINUS_QTY":
+        case "QTY_MINUS":
             const pIndex3 = state.cart.findIndex((p => p.pid === action.pid)); 
             if (pIndex3 >= 0 && state.cart[pIndex3].qty > 0) {
-                console.log("Minud qty")
-                 return {
-                     ...state,
-                     cart: state.cart.map((item, i) => 
+                return {
+                    ...state,
+                    cart: state.cart.map((item, i) => 
                         pIndex3 === i 
                         ? { ...item, qty: item.qty - 1 }  
                         : item 
-                 )
-               }} 
+                    )
+                }
+            } else {
+                return state;
+            }
+    
+        case "QTY_ADD":
+            const pIndex2 = state.cart.findIndex((p => p.pid === action.pid)); 
+            if (pIndex2 >= 0) {
+                return {
+                    ...state,
+                    cart: state.cart.map((item, i) => 
+                        pIndex2 === i 
+                        ? { ...item, qty: item.qty + 1 }  
+                        : item 
+                    )
+                }
+            } else {
+                return state;
+            }
+    
+        case "QTY_UPDATE":
+            const pIndex4 = state.cart.findIndex((p => p.pid === action.pid));         
+            if (pIndex4 >= 0 && !isNaN(action.qty)) {
+                return {
+                    ...state,
+                    cart: state.cart.map((item, i) => 
+                        pIndex4 === i 
+                        ? { ...item, qty: action.qty }  
+                        : item 
+                    )
+                }
+            } else {                
+                return {
+                    ...state,
+                    cart: state.cart.map((item, i) => 
+                        pIndex4 === i 
+                        ? { ...item, qty: 0 }  
+                        : item 
+                    )
+                }
+            }
 
 
         default:

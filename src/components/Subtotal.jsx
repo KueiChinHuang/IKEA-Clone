@@ -4,7 +4,7 @@ import CurrencyFormat from "react-currency-format";
 import { useStateValue } from "../StateProvider";
 import { getCartTotal } from "../reducer";
 
-function Subtotal() {
+function Subtotal({ getTotal, pid }) {
   const [{ cart }, dispatch] = useStateValue();
 
   return (
@@ -12,7 +12,8 @@ function Subtotal() {
       <CurrencyFormat
         renderText={(value) => <strong>{value}</strong>}
         decimalScale={2}
-        value={getCartTotal(cart)}
+        fixedDecimalScale={true}
+        value={getTotal(cart, pid)}
         displayType={"text"}
         thousandSeparator={true}
         prefix={"$"}

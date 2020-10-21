@@ -35,4 +35,34 @@
 .cart-product-action {
   grid-column: 2/3;
   grid-row: 3/3;
+  height: 50px;
+  display: flex;
+  /* justify-content: space-around; */
+}
+
+.cart-product-action-qty {
+  display: flex;
+  border: 1px solid #dfdfdf;
+  border-radius: 50px;
+  align-items: center;
+  padding: 10px;
+}
+
+.cart-product-action-qty-input {
+  border: hidden;
+  background: transparent;
+  width: 30px;
+  text-align: center;
+}
+
+.cart-product-action-qty-input:focus {
+  outline: none;
+}
+
+.cart-product-action-remove {
+  align-self: center;
+  padding-left: 30px;
+  color: #484848;
+  cursor: pointer;
+  font-size: 0.875rem;
 }

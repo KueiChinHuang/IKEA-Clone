@@ -1,4 +1,5 @@
 import React from "react";
+import { getCartTotal } from "../reducer";
 import { useStateValue } from "../StateProvider";
 import "./Cart.css";
 import CartProduct from "./CartProduct";
@@ -30,7 +31,7 @@ function Cart() {
         <div className="cart-summary">
           <h4>Order summary</h4>
           <span>Subtotal ({cart.length} items):</span>
-          <Subtotal />
+          <Subtotal getTotal={getCartTotal} />
         </div>
         <button className="btn-checkout">Continue to checkout</button>
 

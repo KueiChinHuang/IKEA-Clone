@@ -1,7 +1,10 @@
 import React from "react";
-import { getQty } from "../reducer";
+import { getProductTotal, getQty } from "../reducer";
 import { useStateValue } from "../StateProvider";
 import "./CartProduct.css";
+import Subtotal from "./Subtotal";
+import ArrowDropDownIcon from "@material-ui/icons/ArrowDropDown";
+import ArrowDropUpIcon from "@material-ui/icons/ArrowDropUp";
 
 function CartProduct({ pid, title, description, price, image, rating }) {
   const [{ cart }, dispatch] = useStateValue();
@@ -13,18 +16,35 @@ function CartProduct({ pid, title, description, price, image, rating }) {
     });
   };
 
-  const addQty = () => {
+  const qtyMinus = () => {
     dispatch({
-      type: "ADD_QTY",
+      type: "QTY_MINUS",
       pid: pid,
     });
   };
 
-  const minusQty = () => {
+  const qtyAdd = () => {
     dispatch({
-      type: "MINUS_QTY",
+      type: "QTY_ADD",
       pid: pid,
     });
+  };
+
+  const qtyUpdate = (qty) => {
+    dispatch({
+      type: "QTY_UPDATE",
+      pid: pid,
+      qty: qty,
+    });
+  };
+
+  const handleInputChange = async (event) => {
+    event.persist();
+
+    const { name, value } = event.target;
+
+    console.log(name, value);
+    qtyUpdate(parseInt(value));
   };
 
   return (
@@ -32,20 +52,37 @@ function CartProduct({ pid, title, description, price, image, rating }) {
       <div className="cart-product-container">
         <img src={image} alt={image} className="cart-product-image" />
         <h4 className="cart-product-title">{title}</h4>
-        <span className="cart-prodcut-price">{price}</span>
+        <span className="cart-prodcut-price">
+          <Subtotal getTotal={getProductTotal} pid={pid} />
+        </span>
         <span className="cart-product-description">{description}</span>
+
         <div className="cart-product-action">
-          <span className="cart-product-action-quantity">
-            {getQty(cart, pid)}
-          </span>
-          <button onClick={minusQty}>-</button>
-          <button onClick={addQty}>+</button>
-          <button
+          <div className="cart-product-action-qty">
+            <ArrowDropDownIcon
+              className="cart-product-action-qty-btn"
+              onClick={qtyMinus}
+            />
+            <input
+              name="qty"
+              className="cart-product-action-qty-input"
+              type="text"
+              value={getQty(cart, pid)}
+              onChange={handleInputChange}
+              pattern="[0-9]*"
+            />
+            <ArrowDropUpIcon
+              className="cart-product-action-qty-btn"
+              onClick={qtyAdd}
+            />
+          </div>
+
+          <div
             className="cart-product-action-remove"
             onClick={removeFromCart}
           >
-            remove
-          </button>
+            Remove
+          </div>
         </div>
       </div>
     </div>
