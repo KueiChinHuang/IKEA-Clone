@@ -16,6 +16,9 @@ export const getQty = (cart, pid) => {
     return cart[pIndex].qty;
 }
 
+export const getQtyTotal = (cart) =>
+    cart?.reduce((total, item) => total + item.qty, 0);
+
 
 const reducer = (state, action) => {
     console.log(state, action)
