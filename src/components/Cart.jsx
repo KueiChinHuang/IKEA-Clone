@@ -18,7 +18,7 @@ function Cart() {
         ) : (
           <>
             <h1 className="cart-title">Shopping cart</h1>
-            <button className="btn-checkout">Continue to checkout</button>
+            <button className="btn">Continue to checkout</button>
 
             <div className="cart-product-list">
               {cart.map((item) => (
@@ -43,7 +43,7 @@ function Cart() {
                 <Subtotal getTotal={getCartTotal} className="" />
               </div>
             </div>
-            <button className="btn-checkout">Continue to checkout</button>
+            <button className="btn">Continue to checkout</button>
           </>
         )}
         <div className="cart-footer">

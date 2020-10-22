@@ -19,7 +19,7 @@ function Profile() {
   return (
     <div className="profile">
       {!user && <Redirect to="/login" />}
-      <h1>Hello Kuei-Chin!</h1>
+      <h1>Hello {user && user?.providerData[0].uid}</h1>
       <div className="profile-login" onClick={handleAuthentication}>
         Log out
       </div>

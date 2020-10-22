@@ -1,14 +1,74 @@
 .login {
   width: 100%;
   height: 100%;
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(13, 1fr);
+  line-height: 1.71429;
+  font-size: 0.875rem;
 }
 
 .login-banner {
+  grid-column: 1 / 6;
   background-color: rgb(0, 88, 163);
+  color: white;
+  padding: 2rem 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.login-banner-container {
+  width: 200px;
+}
+
+.login-banner img {
+  color: white;
+  width: 100px;
+}
+
+.login-banner-title {
+  margin-top: 150px;
+}
+
+.login-banner-title span {
+  color: rgb(251, 217, 20);
 }
 
 .login-content {
+  grid-column: 6 / 14;
   display: flex;
   flex-direction: column;
+  color: #484848;
+  padding: 50px;
+}
+
+.login-content-container {
+  width: 500px;
+}
+
+.login-content-description {
+  margin: 50px 0;
+}
+
+.login-content-input {
+  margin: 30px 0;
+}
+
+.login-content-input input {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #929292;
+}
+
+.login-content-input input:focus {
+  outline: none;
+}
+
+.btn-register {
+  margin-top: 20px;
+  background: #f5f5f5;
+  color: #111;
+}
+.btn-register:hover {
+  background: #dfdfdf;
 }

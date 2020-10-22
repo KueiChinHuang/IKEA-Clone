@@ -44,7 +44,7 @@ function Product({ match }) {
             starSpacing="0"
           />
         </div>
-        <button className="btn-add-to-cart" onClick={addToCart}>
+        <button className="btn" onClick={addToCart}>
           Add to cart
         </button>
       </div>
