@@ -13,7 +13,6 @@ function Cart() {
   return (
     <div className="cart">
       <div className="cart-container">
-        {console.log(cart.length)}
         {!cart.length > 0 ? (
           <h1 className="cart-title">Your bag is empty</h1>
         ) : (

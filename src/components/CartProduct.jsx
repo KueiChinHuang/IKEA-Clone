@@ -42,8 +42,6 @@ function CartProduct({ pid, title, description, price, image, rating }) {
     event.persist();
 
     const { name, value } = event.target;
-
-    console.log(name, value);
     qtyUpdate(parseInt(value));
   };
 
@@ -77,10 +75,7 @@ function CartProduct({ pid, title, description, price, image, rating }) {
             />
           </div>
 
-          <div
-            className="cart-product-action-remove"
-            onClick={removeFromCart}
-          >
+          <div className="cart-product-action-remove" onClick={removeFromCart}>
             Remove
           </div>
         </div>

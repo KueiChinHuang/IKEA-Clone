@@ -50,31 +50,32 @@ function Header() {
 
         <div className="header__icons">
           <ul>
-            <li>
-              <Link to="#">
+            <Link to="#">
+              <li>
                 <LocationOnOutlinedIcon className="header__icon-btn" />
-              </Link>
-            </li>
-            <li>
-              <Link to="#">
+              </li>
+            </Link>
+            <Link to="#">
+              <li>
                 <AssignmentTurnedInOutlinedIcon className="header__icon-btn" />
-              </Link>
-            </li>
-            <li>
-              <Link to="#">
+              </li>
+            </Link>
+
+            <Link to="/login">
+              <li>
                 <PersonOutlineOutlinedIcon className="header__icon-btn" />
-              </Link>
-            </li>
-            <li>
-              <Link to="#">
+              </li>
+            </Link>
+            <Link to="#">
+              <li>
                 <FavoriteBorderIcon className="header__icon-btn" />
-              </Link>
-            </li>
-            <li>
-              <Link to="/cart">
+              </li>
+            </Link>
+            <Link to="/cart">
+              <li>
                 <ShoppingBasketOutlinedIcon className="header__icon-btn header-basket-icon" />
-              </Link>
-            </li>
+              </li>
+            </Link>
           </ul>
         </div>
       </div>

@@ -6,6 +6,7 @@ import Bedroom from "./components/Bedroom";
 import Cart from "./components/Cart";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
+import Login from "./components/Login";
 import Product from "./components/Product";
 
 function App() {
@@ -24,6 +25,10 @@ function App() {
 
               <Route path="/cart">
                 <Cart />
+              </Route>
+
+              <Route path="/login">
+                <Login />
               </Route>
 
               <Route path="/">
