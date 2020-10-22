@@ -57,10 +57,7 @@ function CartProduct({ pid, title, description, price, image, rating }) {
 
         <div className="cart-product-action">
           <div className="cart-product-action-qty">
-            <ArrowDropDownIcon
-              className="cart-product-action-qty-btn"
-              onClick={qtyMinus}
-            />
+            <ArrowDropDownIcon onClick={qtyMinus} />
             <input
               name="qty"
               className="cart-product-action-qty-input"
@@ -69,10 +66,7 @@ function CartProduct({ pid, title, description, price, image, rating }) {
               onChange={handleInputChange}
               pattern="[0-9]*"
             />
-            <ArrowDropUpIcon
-              className="cart-product-action-qty-btn"
-              onClick={qtyAdd}
-            />
+            <ArrowDropUpIcon onClick={qtyAdd} />
           </div>
 
           <div className="cart-product-action-remove" onClick={removeFromCart}>

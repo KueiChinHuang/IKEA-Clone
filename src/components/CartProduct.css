@@ -47,6 +47,7 @@
   border-radius: 50px;
   align-items: center;
   padding: 10px;
+  cursor: pointer;
 }
 
 .cart-product-action-qty-input {

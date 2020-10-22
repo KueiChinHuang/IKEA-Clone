@@ -12,7 +12,7 @@ import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
 import ShoppingBasketOutlinedIcon from "@material-ui/icons/ShoppingBasketOutlined";
 
 function Header() {
-  const [{ cart }, dispatch] = useStateValue();
+  const [{ cart, user }, dispatch] = useStateValue();
 
   return (
     <header className="header">
@@ -61,11 +61,21 @@ function Header() {
               </li>
             </Link>
 
-            <Link to="/login">
-              <li>
-                <PersonOutlineOutlinedIcon className="header__icon-btn" />
-              </li>
-            </Link>
+            {user ? (
+              <Link to="/profile">
+                <li>
+                  <PersonOutlineOutlinedIcon className="header__icon-btn" />
+                </li>
+              </Link>
+            ) : (
+              <Link to="/login">
+                <li>
+                  <PersonOutlineOutlinedIcon className="header__icon-btn" />
+                </li>
+              </Link>
+            )}
+            {/* <Link to="/login"> */}
+
             <Link to="#">
               <li>
                 <FavoriteBorderIcon className="header__icon-btn" />

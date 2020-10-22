@@ -1,5 +1,6 @@
 export const initialState = {
     cart: [],
+    user: null
 };
 
 // Selector
@@ -21,7 +22,7 @@ export const getQtyTotal = (cart) =>
 
 
 const reducer = (state, action) => {
-    console.log(state, action)
+    console.log("!~~ state and action in reducer ~~!", state, action)
 
     switch(action.type) {
         case "ADD_TO_CART":            
@@ -93,6 +94,11 @@ const reducer = (state, action) => {
                 }
             }
 
+        case 'SET_USER':
+            return {
+                ...state,
+                user: action.user
+            }
 
         default:
             return state;
