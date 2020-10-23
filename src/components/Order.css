@@ -23,6 +23,8 @@
 .order-item-description {
   grid-column: 2/3;
   grid-row: 2/3;
+  color: #484848;
+  font-size: 0.875rem;
 }
 
 .order-subtotal {

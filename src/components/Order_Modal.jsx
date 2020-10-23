@@ -49,7 +49,7 @@ function Order_Modal({ open, children, onClose }) {
         onClick={onClose}
       />
       <div className="order_model-details" style={MODAL_STYLES}>
-        <h1>Order Details</h1>
+        
         <button onClick={onClose} style={BTN_STYLES}>
           X
         </button>

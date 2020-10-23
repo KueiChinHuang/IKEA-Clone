@@ -9,6 +9,7 @@ import Order_Modal from "./Order_Modal";
 function Orders() {
   const [orders, setOrders] = useState([]);
   const [oCart, setOCart] = useState([]);
+  const [oTime, setOTime] = useState("");
   const [{ cart, user }, dispatch] = useStateValue();
   const [isOpen, setIsOpen] = useState(false);
 
@@ -32,14 +33,17 @@ function Orders() {
     let oid = e.target.value;
     let c = await orders.find((e) => e.id === oid).data.cart;
     setOCart(c);
+    let t = await orders.find((e) => e.id === oid).data.created;
+    setOTime(t);
+
     setIsOpen(true);
   };
 
   return (
     <div className="orders">
-      <h1>Your Orders</h1>
+      <h1>My Orders</h1>
       <div className="orders-order">
-        <table>
+        <table className="orders-table">
           <tr>
             <th>Date</th>
             <th>Items</th>
@@ -56,7 +60,7 @@ function Orders() {
               <td>{order.id}</td>
               <td>{order.data.amount}</td>
               <td>
-                <button onClick={showOrder} value={order.id}>
+                <button onClick={showOrder} value={order.id} className="btn">
                   Show
                 </button>
               </td>
@@ -65,6 +69,10 @@ function Orders() {
         </table>
       </div>
       <Order_Modal open={isOpen} onClose={() => setIsOpen(false)}>
+        <h1>Order Details</h1>
+        <span className="orders-details-time">
+          {moment.unix(oTime).format("MMMM Do YYYY, h:mma")}
+        </span>
         {<Order cart={oCart} />}
       </Order_Modal>
     </div>
