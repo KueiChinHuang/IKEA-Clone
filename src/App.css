@@ -7,17 +7,23 @@
   height: 100%;
   display: grid;
   grid-template-rows: 100px 1fr 100px;
+  justify-items: center;
 }
 
 .header {
   grid-row: 1/2;
   background: white;
+  width: 100%;
 }
 
 .main {
   grid-row: 2/3;
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }
 
 .footer {
   grid-row: 3;
+  width: 100%;
 }

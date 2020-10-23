@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { auth } from "./firebase";
+import { loadStripe } from "@stripe/stripe-js";
+import { Elements } from "@stripe/react-stripe-js";
 
 import "./App.css";
 import Bedroom from "./components/Bedroom";
@@ -12,6 +14,8 @@ import Login from "./components/Login";
 import Product from "./components/Product";
 import { useStateValue } from "./StateProvider";
 import Profile from "./components/Profile";
+
+const promise = loadStripe("pk_test_hJnBZtwD0cV58BI7gGxuPovo00bBQryEji");
 
 function App() {
   const [{}, dispatch] = useStateValue();
@@ -50,7 +54,9 @@ function App() {
               </Route>
 
               <Route path="/checkout">
-                <Checkout />
+                <Elements stripe={promise}>
+                  <Checkout />
+                </Elements>
               </Route>
 
               <Route path="/login">

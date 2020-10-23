@@ -12,7 +12,7 @@
 
 .checkout-section {
   background: white;
-  width: 300px;
+  width: 400px;
   margin-top: 10px;
   padding: 50px 80px;
   display: flex;
@@ -68,4 +68,5 @@
   display: flex;
   font-weight: bolder;
   justify-content: space-between;
+  margin: 30px 0;
 }

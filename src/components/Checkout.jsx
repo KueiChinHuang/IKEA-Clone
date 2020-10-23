@@ -1,10 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { getCartTotal, getQty } from "../reducer";
+import { getCartTotal, getQty, getQtyTotal } from "../reducer";
 import { useStateValue } from "../StateProvider";
 import "./Checkout.css";
 import Subtotal from "./Subtotal";
-
 function Checkout() {
   const [{ cart, user }, dispatch] = useStateValue();
 
@@ -30,7 +29,7 @@ function Checkout() {
           </div>
           {productHTML}
           <div className="checkout-subtotal">
-            <span>Subtotal</span>
+            <span>Subtotal ({getQtyTotal(cart)} items)</span>
             <span>
               <Subtotal getTotal={getCartTotal} />
             </span>
