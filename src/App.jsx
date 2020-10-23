@@ -5,6 +5,7 @@ import { auth } from "./firebase";
 import "./App.css";
 import Bedroom from "./components/Bedroom";
 import Cart from "./components/Cart";
+import Checkout from "./components/Checkout";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Login from "./components/Login";
@@ -17,7 +18,6 @@ function App() {
 
   useEffect(() => {
     auth.onAuthStateChanged((authUser) => {
-      console.log("The user is >>>>>", authUser);
       if (authUser) {
         dispatch({
           type: "SET_USER",
@@ -47,6 +47,10 @@ function App() {
 
               <Route path="/cart">
                 <Cart />
+              </Route>
+
+              <Route path="/checkout">
+                <Checkout />
               </Route>
 
               <Route path="/login">

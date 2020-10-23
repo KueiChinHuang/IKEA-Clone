@@ -1,6 +1,8 @@
 import React from "react";
 import { getCartTotal, getQtyTotal } from "../reducer";
 import { useStateValue } from "../StateProvider";
+import { useHistory } from "react-router-dom";
+
 import "./Cart.css";
 import CartProduct from "./CartProduct";
 import Subtotal from "./Subtotal";
@@ -8,7 +10,14 @@ import FavoriteBorderOutlinedIcon from "@material-ui/icons/FavoriteBorderOutline
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 
 function Cart() {
+  const history = useHistory();
   const [{ cart }, dispatch] = useStateValue();
+
+  const checkoutBtn = (
+    <button className="btn" onClick={(e) => history.push("/checkout")}>
+      Continue to checkout
+    </button>
+  );
 
   return (
     <div className="cart">
@@ -18,8 +27,7 @@ function Cart() {
         ) : (
           <>
             <h1 className="cart-title">Shopping cart</h1>
-            <button className="btn">Continue to checkout</button>
-
+            {checkoutBtn}
             <div className="cart-product-list">
               {cart.map((item) => (
                 <CartProduct
@@ -43,7 +51,7 @@ function Cart() {
                 <Subtotal getTotal={getCartTotal} className="" />
               </div>
             </div>
-            <button className="btn">Continue to checkout</button>
+            {checkoutBtn}
           </>
         )}
         <div className="cart-footer">

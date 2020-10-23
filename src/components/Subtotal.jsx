@@ -2,10 +2,9 @@ import React from "react";
 import "./Subtotal.css";
 import CurrencyFormat from "react-currency-format";
 import { useStateValue } from "../StateProvider";
-import { getCartTotal } from "../reducer";
 
 function Subtotal({ getTotal, pid }) {
-  const [{ cart }, dispatch] = useStateValue();
+  const [{ cart }] = useStateValue();
 
   return (
     <div className="subtotal">

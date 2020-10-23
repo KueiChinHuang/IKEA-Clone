@@ -6,22 +6,18 @@
 .app-container {
   height: 100%;
   display: grid;
-  grid-template-columns: 10% minmax(600px, 1fr) 10%;
   grid-template-rows: 100px 1fr 100px;
 }
 
 .header {
-  grid-column: 1/4;
   grid-row: 1/2;
   background: white;
 }
 
 .main {
-  grid-column: 2/3;
   grid-row: 2/3;
 }
 
 .footer {
-  grid-column: 1/4;
   grid-row: 3;
 }
