@@ -6,6 +6,8 @@ import { getCartTotal, getQty, getQtyTotal } from "../reducer";
 import { useStateValue } from "../StateProvider";
 import "./Checkout.css";
 import Subtotal from "./Subtotal";
+import { db } from "../firebase";
+import Order from "./Order";
 
 function Checkout() {
   const [{ cart, user }, dispatch] = useStateValue();
@@ -43,6 +45,16 @@ function Checkout() {
         },
       })
       .then(({ paymentIntent }) => {
+        db.collection("users")
+          .doc(user?.uid)
+          .collection("orders")
+          .doc(paymentIntent.id)
+          .set({
+            cart: cart,
+            amount: paymentIntent.amount,
+            created: paymentIntent.created,
+          });
+
         setSucceeded(true);
         setError(null);
         setProcessing(false);
@@ -60,16 +72,6 @@ function Checkout() {
     setError(e.error ? e.error.message : "");
   };
 
-  const productHTML = cart.map((item) => (
-    <div className="checkout-items-container">
-      <img className="checkout-item-img" src={item.image} alt={item.image} />
-      <div className="checkout-item-title">
-        <span>{getQty(cart, item.pid)}</span> x <span>{item.title}</span>
-      </div>
-      <div className="checkout-item-description">{item.description}</div>
-    </div>
-  ));
-
   return (
     <div className="checkout">
       <div className="checkout-container">
@@ -80,13 +82,7 @@ function Checkout() {
               <span className="checkout-edit">Edit</span>
             </Link>
           </div>
-          {productHTML}
-          <div className="checkout-subtotal">
-            <span>Subtotal ({getQtyTotal(cart)} items)</span>
-            <span>
-              <Subtotal getTotal={getCartTotal} />
-            </span>
-          </div>
+          <Order cart={cart} />
         </div>
 
         <div className="checkout-section">
@@ -104,7 +100,7 @@ function Checkout() {
             <form onSubmit={handleSubmit}>
               <CardElement onChange={handleChange} />
               <div className="checkout-payment-priceContainer">
-                <Subtotal getTotal={getCartTotal} />
+                <Subtotal getTotal={getCartTotal} cart={cart} />
               </div>
               <button disabled={processing || disabled || succeeded}>
                 <span>{processing ? <p>Processing</p> : "Buy Now"}</span>

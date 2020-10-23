@@ -51,7 +51,7 @@ function CartProduct({ pid, title, description, price, image, rating }) {
         <img src={image} alt={image} className="cart-product-image" />
         <h4 className="cart-product-title">{title}</h4>
         <span className="cart-prodcut-price">
-          <Subtotal getTotal={getProductTotal} pid={pid} />
+          <Subtotal getTotal={getProductTotal} cart={cart} pid={pid} />
         </span>
         <span className="cart-product-description">{description}</span>
 
