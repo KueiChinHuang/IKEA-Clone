@@ -14,6 +14,7 @@ import Login from "./components/Login";
 import Product from "./components/Product";
 import { useStateValue } from "./StateProvider";
 import Profile from "./components/Profile";
+import Orders from "./components/Orders";
 
 const promise = loadStripe("pk_test_hJnBZtwD0cV58BI7gGxuPovo00bBQryEji");
 
@@ -51,6 +52,10 @@ function App() {
 
               <Route path="/cart">
                 <Cart />
+              </Route>
+
+              <Route path="/orders">
+                <Orders />
               </Route>
 
               <Route path="/checkout">

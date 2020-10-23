@@ -25,7 +25,7 @@ const reducer = (state, action) => {
     // console.log("!~~ state and action in reducer ~~!", state, action)
 
     switch(action.type) {
-        case "ADD_TO_CART":            
+        case 'ADD_TO_CART':            
             const pIndex = state.cart.findIndex((p => p.pid === action.item.pid)); 
             if (pIndex === -1) {
                 return {
@@ -36,13 +36,13 @@ const reducer = (state, action) => {
                 return state;
             }
         
-        case "REMOVE_FROM_CART":
+        case 'REMOVE_FROM_CART':
             return { 
                 ...state, 
                 cart: state.cart.filter(item => item.pid !== action.pid)
             }
 
-        case "QTY_MINUS":
+        case 'QTY_MINUS':
             const pIndex3 = state.cart.findIndex((p => p.pid === action.pid)); 
             if (pIndex3 >= 0 && state.cart[pIndex3].qty > 1) {
                 return {
@@ -57,7 +57,7 @@ const reducer = (state, action) => {
                 return state;
             }
     
-        case "QTY_ADD":
+        case 'QTY_ADD':
             const pIndex2 = state.cart.findIndex((p => p.pid === action.pid)); 
             if (pIndex2 >= 0) {
                 return {
@@ -72,7 +72,7 @@ const reducer = (state, action) => {
                 return state;
             }
     
-        case "QTY_UPDATE":
+        case 'QTY_UPDATE':
             const pIndex4 = state.cart.findIndex((p => p.pid === action.pid));         
             if (pIndex4 >= 0 && !isNaN(action.qty) && action.qty > 1) {
                 return {
@@ -100,6 +100,12 @@ const reducer = (state, action) => {
                 user: action.user
             }
 
+        case 'EMPTY_CART':
+            return {
+                ...state,
+                cart: []
+            }
+        
         default:
             return state;
     }

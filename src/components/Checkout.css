@@ -70,3 +70,7 @@
   justify-content: space-between;
   margin: 30px 0;
 }
+
+.checkout-payment-detail {
+  flex: 0.8;
+}

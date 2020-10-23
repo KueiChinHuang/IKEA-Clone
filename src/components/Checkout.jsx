@@ -1,11 +1,64 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
+import axios from "../axios";
+import React, { useEffect, useState } from "react";
+import { Link, useHistory } from "react-router-dom";
 import { getCartTotal, getQty, getQtyTotal } from "../reducer";
 import { useStateValue } from "../StateProvider";
 import "./Checkout.css";
 import Subtotal from "./Subtotal";
+
 function Checkout() {
   const [{ cart, user }, dispatch] = useStateValue();
+  const [error, setError] = useState(null);
+  const [succeeded, setSucceeded] = useState(false);
+  const [processing, setProcessing] = useState("");
+  const [disabled, setDisabled] = useState(true);
+  const [clientSecret, setClientSecret] = useState(true);
+
+  const history = useHistory();
+  const stripe = useStripe();
+  const elements = useElements();
+
+  useEffect(() => {
+    // generate the special stripe secret which allows us to charge a customer
+    const getClientSecret = async () => {
+      const res = await axios({
+        method: "post",
+        url: `/payments/create?total=${getCartTotal(cart) * 100}`,
+      });
+      setClientSecret(res.data.clientSecret);
+    };
+
+    getClientSecret();
+  }, [cart]);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setProcessing(true);
+
+    const payload = await stripe
+      .confirmCardPayment(clientSecret, {
+        payment_method: {
+          card: elements.getElement(CardElement),
+        },
+      })
+      .then(({ paymentIntent }) => {
+        setSucceeded(true);
+        setError(null);
+        setProcessing(false);
+
+        dispatch({
+          type: "EMPTY_CART",
+        });
+
+        history.replace("/orders");
+      });
+  };
+
+  const handleChange = (e) => {
+    setDisabled(e.empty);
+    setError(e.error ? e.error.message : "");
+  };
 
   const productHTML = cart.map((item) => (
     <div className="checkout-items-container">
@@ -47,6 +100,18 @@ function Checkout() {
 
         <div className="checkout-section">
           <h2 className="checkout-title">Payment</h2>
+          <div className="checkout-payment-detail">
+            <form onSubmit={handleSubmit}>
+              <CardElement onChange={handleChange} />
+              <div className="checkout-payment-priceContainer">
+                <Subtotal getTotal={getCartTotal} />
+              </div>
+              <button disabled={processing || disabled || succeeded}>
+                <span>{processing ? <p>Processing</p> : "Buy Now"}</span>
+              </button>
+              {error && <div>{error}</div>}
+            </form>
+          </div>
         </div>
       </div>
     </div>
