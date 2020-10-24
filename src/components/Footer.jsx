@@ -1,12 +1,17 @@
-import React from 'react'
-import './Footer.css'
+import React from "react";
+import "./Footer.css";
 
 function Footer() {
-    return (
-        <div className="footer">
-            <h4>This is footer</h4>
-        </div>
-    )
+  return (
+    <div className="footer">
+      <small>
+        ©Copyright 2020 ♥️ Reproduced by{" "}
+        <a href="https://doris-portfolio.netlify.app/" target="_blank">
+          Kuei-Chin Huang
+        </a>
+      </small>
+    </div>
+  );
 }
 
-export default Footer
+export default Footer;

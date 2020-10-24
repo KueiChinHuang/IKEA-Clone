@@ -1,7 +1,7 @@
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
 import axios from "../axios";
 import React, { useEffect, useState } from "react";
-import { Link, useHistory } from "react-router-dom";
+import { Link, Redirect, useHistory } from "react-router-dom";
 import { getCartTotal, getQty, getQtyTotal } from "../reducer";
 import { useStateValue } from "../StateProvider";
 import "./Checkout.css";
@@ -74,6 +74,7 @@ function Checkout() {
 
   return (
     <div className="checkout">
+      {!user && <Redirect to="/login" />}
       <div className="checkout-container">
         <div className="checkout-section">
           <div className="checkout-title">
