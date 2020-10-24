@@ -16,6 +16,7 @@ function Orders() {
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
+    let mounted = true;
     if (user) {
       db.collection("users")
         .doc(user?.uid)
@@ -29,6 +30,10 @@ function Orders() {
     } else {
       setOrders([]);
     }
+
+    return function cleanup() {
+      mounted = false;
+    };
   }, [user, oCart, isOpen]);
 
   const showOrder = async (e) => {
@@ -46,30 +51,36 @@ function Orders() {
       <h1>My Orders</h1>
       <div className="orders-order">
         <table className="orders-table">
-          <tr>
-            <th>Date</th>
-            <th>Items</th>
-            <th>Order ID</th>
-            <th>Total</th>
-            <th></th>
-          </tr>
-          {orders?.map((order) => (
+          <thead>
             <tr>
-              <td>
-                {moment.unix(order.data.created).format("MMMM Do YYYY, h:mma")}
-              </td>
-              <td>{getQtyTotal(order.data.cart)}</td>
-              <td>{order.id}</td>
-              <td>
-                <Subtotal getTotal={getCartTotal} cart={order.data.cart} />
-              </td>
-              <td>
-                <button onClick={showOrder} value={order.id} className="btn">
-                  Show
-                </button>
-              </td>
+              <th>Date</th>
+              <th>Items</th>
+              <th>Order ID</th>
+              <th>Total</th>
+              <th></th>
             </tr>
-          ))}
+          </thead>
+          <tbody>
+            {orders?.map((order, i) => (
+              <tr key={i}>
+                <td>
+                  {moment
+                    .unix(order.data.created)
+                    .format("MMMM Do YYYY, h:mma")}
+                </td>
+                <td>{getQtyTotal(order.data.cart)}</td>
+                <td>{order.id}</td>
+                <td>
+                  <Subtotal getTotal={getCartTotal} cart={order.data.cart} />
+                </td>
+                <td>
+                  <button onClick={showOrder} value={order.id} className="btn">
+                    Show
+                  </button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
         </table>
       </div>
       <Modal open={isOpen} onClose={() => setIsOpen(false)}>

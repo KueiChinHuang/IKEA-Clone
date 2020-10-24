@@ -6,8 +6,8 @@ import Subtotal from "./_Subtotal";
 function Order({ cart, order }) {
   return (
     <div className="order">
-      {cart?.map((item) => (
-        <div className="order-items-container">
+      {cart?.map((item, i) => (
+        <div className="order-items-container" key={i}>
           <img className="order-item-img" src={item.image} alt={item.image} />
           <div className="order-item-title">
             <span>{getQty(cart, item.pid)}</span> x <span>{item.title}</span>
