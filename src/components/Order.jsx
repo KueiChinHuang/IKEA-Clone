@@ -1,7 +1,5 @@
 import React from "react";
 import "./Order.css";
-import CartProduct from "./CartProduct";
-import { useStateValue } from "../StateProvider";
 import { getCartTotal, getQty, getQtyTotal } from "../reducer";
 import Subtotal from "./Subtotal";
 
@@ -12,7 +10,7 @@ function Order({ cart, order }) {
         <div className="order-items-container">
           <img className="order-item-img" src={item.image} alt={item.image} />
           <div className="order-item-title">
-            <span>{getQty(cart, item.pid)}</span> x <span>{item.title}</span>{" "}
+            <span>{getQty(cart, item.pid)}</span> x <span>{item.title}</span>
             <small>(${item.price}/EA)</small>
           </div>
           <div className="order-item-description">{item.description}</div>

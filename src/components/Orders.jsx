@@ -4,7 +4,7 @@ import { useStateValue } from "../StateProvider";
 import "./Orders.css";
 import Order from "./Order";
 import moment from "moment";
-import Order_Modal from "./Order_Modal";
+import Modal from "./_Modal";
 import Subtotal from "./Subtotal";
 import { getCartTotal, getQtyTotal } from "../reducer";
 
@@ -72,13 +72,13 @@ function Orders() {
           ))}
         </table>
       </div>
-      <Order_Modal open={isOpen} onClose={() => setIsOpen(false)}>
+      <Modal open={isOpen} onClose={() => setIsOpen(false)}>
         <h1>Order Details</h1>
         <span className="orders-details-time">
           {moment.unix(oTime).format("MMMM Do YYYY, h:mma")}
         </span>
         {<Order cart={oCart} />}
-      </Order_Modal>
+      </Modal>
     </div>
   );
 }

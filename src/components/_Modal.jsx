@@ -1,6 +1,4 @@
-import { grey } from "@material-ui/core/colors";
-import { GpsFixed } from "@material-ui/icons";
-import React, { useState } from "react";
+import React from "react";
 import ReactDom from "react-dom";
 
 const MODAL_STYLES = {
@@ -38,7 +36,7 @@ const BTN_STYLES = {
   cursor: "pointer",
 };
 
-function Order_Modal({ open, children, onClose }) {
+function Modal({ open, children, onClose }) {
   if (!open) return null;
 
   return ReactDom.createPortal(
@@ -49,7 +47,6 @@ function Order_Modal({ open, children, onClose }) {
         onClick={onClose}
       />
       <div className="order_model-details" style={MODAL_STYLES}>
-        
         <button onClick={onClose} style={BTN_STYLES}>
           X
         </button>
@@ -60,4 +57,4 @@ function Order_Modal({ open, children, onClose }) {
   );
 }
 
-export default Order_Modal;
+export default Modal;

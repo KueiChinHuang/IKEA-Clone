@@ -24,14 +24,26 @@ a {
   border: 0;
   border-radius: 52px;
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .btn:hover {
   background: #004f93;
 }
 
+.btn:active {
+  background: #00294d;
+}
+
 .btn:focus {
   outline: none;
+}
+
+.btn:visited {
+  background: #f5f5f5;
+  color: rgb(40, 25, 75);
 }
 
 .btn:disabled {
