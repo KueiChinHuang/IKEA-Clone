@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Header.css";
 import { Link } from "react-router-dom";
 import { useStateValue } from "../StateProvider";
@@ -12,7 +12,16 @@ import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
 import ShoppingBasketOutlinedIcon from "@material-ui/icons/ShoppingBasketOutlined";
 
 function Header() {
+  const [isGreen, setIsGreen] = useState(true);
   const [{ cart, user }, dispatch] = useStateValue();
+
+  const CART_STYLE = {
+    visibility: isGreen ? "visible" : "hidden",
+  };
+
+  useEffect(() => {
+    cart.length > 0 ? setIsGreen(true) : setIsGreen(false);
+  }, [cart]);
 
   return (
     <header className="header">
@@ -28,13 +37,13 @@ function Header() {
         <div className="header__nav">
           <ul className="header__nav__main">
             <li>
-              <Link to="#">Products</Link>
+              <Link to="/">Products</Link>
             </li>
             <li>
               <Link to="/">Rooms</Link>
             </li>
             <li>
-              <Link to="#">SALE</Link>
+              <Link to="/">SALE</Link>
             </li>
           </ul>
         </div>
@@ -52,38 +61,38 @@ function Header() {
           <ul>
             <Link to="#">
               <li>
-                <LocationOnOutlinedIcon className="header__icon-btn" />
+                <LocationOnOutlinedIcon />
               </li>
             </Link>
             <Link to="#">
               <li>
-                <AssignmentTurnedInOutlinedIcon className="header__icon-btn" />
+                <AssignmentTurnedInOutlinedIcon />
               </li>
             </Link>
 
             {user ? (
               <Link to="/profile">
                 <li>
-                  <PersonOutlineOutlinedIcon className="header__icon-btn" />
+                  <PersonOutlineOutlinedIcon />
                 </li>
               </Link>
             ) : (
               <Link to="/login">
                 <li>
-                  <PersonOutlineOutlinedIcon className="header__icon-btn" />
+                  <PersonOutlineOutlinedIcon />
                 </li>
               </Link>
             )}
-            {/* <Link to="/login"> */}
 
             <Link to="#">
               <li>
-                <FavoriteBorderIcon className="header__icon-btn" />
+                <FavoriteBorderIcon />
               </li>
             </Link>
             <Link to="/cart">
               <li>
-                <ShoppingBasketOutlinedIcon className="header__icon-btn header-basket-icon" />
+                <div id="header__icon-basket" style={CART_STYLE}></div>
+                <ShoppingBasketOutlinedIcon />
               </li>
             </Link>
           </ul>
