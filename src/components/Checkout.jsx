@@ -98,11 +98,15 @@ function Checkout() {
           <h2 className="checkout-title">Payment</h2>
           <div className="checkout-payment-detail">
             <form onSubmit={handleSubmit}>
-              <CardElement onChange={handleChange} />
               <div className="checkout-payment-priceContainer">
+                Order Total:
                 <Subtotal getTotal={getCartTotal} cart={cart} />
               </div>
-              <button disabled={processing || disabled || succeeded}>
+              <CardElement onChange={handleChange} />
+              <button
+                disabled={processing || disabled || succeeded}
+                className="btn"
+              >
                 <span>{processing ? <p>Processing</p> : "Buy Now"}</span>
               </button>
               {error && <div>{error}</div>}

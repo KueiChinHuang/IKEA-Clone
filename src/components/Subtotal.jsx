@@ -4,8 +4,6 @@ import CurrencyFormat from "react-currency-format";
 import { useStateValue } from "../StateProvider";
 
 function Subtotal({ getTotal, cart, pid }) {
-  // const [{ cart }] = useStateValue();
-
   return (
     <div className="subtotal">
       <CurrencyFormat

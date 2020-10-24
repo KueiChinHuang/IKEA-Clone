@@ -38,7 +38,16 @@
   color: #052b4e;
 }
 
-
 .checkout-payment-detail {
   flex: 0.8;
+}
+
+.checkout-payment-priceContainer {
+  margin: 20px 0;
+  font-size: 1.2em;
+  display: flex;
+}
+
+.checkout-payment-priceContainer strong {
+  margin: 0 10px;
 }

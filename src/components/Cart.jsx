@@ -48,7 +48,7 @@ function Cart() {
                 Subtotal ({getQtyTotal(cart)} items):
               </span>
               <div className="cart-summary-subtotal">
-                <Subtotal getTotal={getCartTotal} className="" />
+                <Subtotal getTotal={getCartTotal} cart={cart} />
               </div>
             </div>
             {checkoutBtn}

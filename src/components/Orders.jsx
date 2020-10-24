@@ -1,10 +1,12 @@
-import React, { useEffect, useState, forwardRef } from "react";
+import React, { useEffect, useState } from "react";
 import { db } from "../firebase";
 import { useStateValue } from "../StateProvider";
 import "./Orders.css";
 import Order from "./Order";
 import moment from "moment";
 import Order_Modal from "./Order_Modal";
+import Subtotal from "./Subtotal";
+import { getCartTotal, getQtyTotal } from "../reducer";
 
 function Orders() {
   const [orders, setOrders] = useState([]);
@@ -56,9 +58,11 @@ function Orders() {
               <td>
                 {moment.unix(order.data.created).format("MMMM Do YYYY, h:mma")}
               </td>
-              <td>{order.data.cart.length}</td>
+              <td>{getQtyTotal(order.data.cart)}</td>
               <td>{order.id}</td>
-              <td>{order.data.amount}</td>
+              <td>
+                <Subtotal getTotal={getCartTotal} cart={order.data.cart} />
+              </td>
               <td>
                 <button onClick={showOrder} value={order.id} className="btn">
                   Show
