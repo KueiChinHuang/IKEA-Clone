@@ -5,7 +5,7 @@ import "./Orders.css";
 import Order from "./Order";
 import moment from "moment";
 import Modal from "./_Modal";
-import Subtotal from "./Subtotal";
+import Subtotal from "./_Subtotal";
 import { getCartTotal, getQtyTotal } from "../reducer";
 
 function Orders() {

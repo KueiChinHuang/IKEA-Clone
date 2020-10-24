@@ -5,7 +5,7 @@ import { Link, Redirect, useHistory } from "react-router-dom";
 import { getCartTotal, getQty, getQtyTotal } from "../reducer";
 import { useStateValue } from "../StateProvider";
 import "./Checkout.css";
-import Subtotal from "./Subtotal";
+import Subtotal from "./_Subtotal";
 import { db } from "../firebase";
 import Order from "./Order";
 

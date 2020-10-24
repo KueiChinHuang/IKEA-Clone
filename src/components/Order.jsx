@@ -1,7 +1,7 @@
 import React from "react";
 import "./Order.css";
 import { getCartTotal, getQty, getQtyTotal } from "../reducer";
-import Subtotal from "./Subtotal";
+import Subtotal from "./_Subtotal";
 
 function Order({ cart, order }) {
   return (

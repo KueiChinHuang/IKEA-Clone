@@ -2,7 +2,7 @@ import React from "react";
 import { getProductTotal, getQty } from "../reducer";
 import { useStateValue } from "../StateProvider";
 import "./CartProduct.css";
-import Subtotal from "./Subtotal";
+import Subtotal from "./_Subtotal";
 import ArrowDropDownIcon from "@material-ui/icons/ArrowDropDown";
 import ArrowDropUpIcon from "@material-ui/icons/ArrowDropUp";
 

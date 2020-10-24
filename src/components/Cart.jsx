@@ -5,7 +5,7 @@ import { useHistory } from "react-router-dom";
 
 import "./Cart.css";
 import CartProduct from "./CartProduct";
-import Subtotal from "./Subtotal";
+import Subtotal from "./_Subtotal";
 import FavoriteBorderOutlinedIcon from "@material-ui/icons/FavoriteBorderOutlined";
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 
