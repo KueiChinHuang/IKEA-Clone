@@ -98,6 +98,9 @@ function Checkout() {
         <div className="checkout-section">
           <h2 className="checkout-title">Payment</h2>
           <div className="checkout-payment-detail">
+            <small>
+              (Please put in card number 4242 4242 4242 4242 to test the app)
+            </small>
             <form onSubmit={handleSubmit}>
               <div className="checkout-payment-priceContainer">
                 Order Total:
