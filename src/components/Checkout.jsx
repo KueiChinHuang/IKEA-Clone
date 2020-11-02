@@ -51,7 +51,7 @@ function Checkout() {
           .doc(paymentIntent.id)
           .set({
             cart: cart,
-            amount: paymentIntent.amount,
+            amount: paymentIntent.amount / 100,
             created: paymentIntent.created,
           });
 
